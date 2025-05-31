@@ -1,0 +1,21 @@
+# Build configuration for Azure App Service
+
+# Set Node version
+engines:
+  node: "22.x"
+
+# Build settings
+build:
+  env:
+    NODE_ENV: production
+  commands:
+    - npm ci
+    - npm run build
+
+# Runtime settings
+environment:
+  NODE_ENV: production
+  PORT: 8080
+
+# Startup command
+start: npm start
